@@ -43,11 +43,18 @@
             margin-bottom: 20px;
         }
         
+        .puzzle-wrapper {
+            display: flex;
+            gap: 24px;
+            align-items: flex-start;
+            flex-wrap: wrap;
+        }
+
         .grid {
             display: inline-block;
             background: #333;
         }
-        
+
         .row {
             display: flex;
             line-height: 0;
@@ -132,12 +139,12 @@
         }
         
         .clue-buttons {
-            margin-top: 20px;
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
+            grid-template-columns: 1fr;
+            gap: 16px;
+            min-width: 280px;
         }
-        
+
         .clue-section {
             background: white;
             padding: 20px;
@@ -224,27 +231,35 @@
         button:hover {
             background: #5568d3;
         }
+
+        @media (max-width: 900px) {
+            .clue-buttons {
+                min-width: 100%;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>🧩 Crossword Puzzle</h1>
-        
-        <div class="grid" id="crossword"></div>
-        
-        <div class="clue-buttons">
-            <div class="clue-section">
-                <h3>🡢 Ngang (Across)</h3>
-                <div id="acrossButtons"></div>
-            </div>
-            <div class="clue-section">
-                <h3>🡣 Dọc (Down)</h3>
-                <div id="downButtons"></div>
+
+        <div class="puzzle-wrapper">
+            <div class="grid" id="crossword"></div>
+
+            <div class="clue-buttons">
+                <div class="clue-section">
+                    <h3>🡢 Ngang (Across)</h3>
+                    <div id="acrossButtons"></div>
+                </div>
+                <div class="clue-section">
+                    <h3>🡣 Dọc (Down)</h3>
+                    <div id="downButtons"></div>
+                </div>
             </div>
         </div>
-        
+
         <div class="clue-display" id="clueDisplay">
-            <p>👆 Click vào một câu hỏi bên dưới để bắt đầu</p>
+            <p>👆 Click vào một câu hỏi bên cạnh để bắt đầu</p>
         </div>
         
         <div class="clues">
